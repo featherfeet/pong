@@ -1,0 +1,28 @@
+[*]
+[*] GTKWave Analyzer v3.3.79 (w)1999-2017 BSI
+[*] Sun Mar 10 00:34:18 2019
+[*]
+[dumpfile] "/home/oliver/Projects/FPGA_Projects/Pong/waves.lxt"
+[dumpfile_mtime] "Sun Mar 10 00:33:32 2019"
+[dumpfile_size] 616625
+[savefile] "/home/oliver/Projects/FPGA_Projects/Pong/gtkwave_config.gtkw"
+[timestart] 243035400
+[size] 1920 1016
+[pos] -1 -1
+*-16.980917 243525000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] test.
+[treeopen] test.top_instantiation.
+[sst_width] 229
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 284
+@28
+test.top_instantiation.display.i_clk[0]
+test.top_instantiation.display.i_pix_stb[0]
+@23
+test.top_instantiation.VGA_B[3:0]
+@22
+test.top_instantiation.display.o_x[9:0]
+test.top_instantiation.display.o_y[8:0]
+[pattern_trace] 1
+[pattern_trace] 0

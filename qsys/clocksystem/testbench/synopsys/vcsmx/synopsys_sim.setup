@@ -1,0 +1,15 @@
+
+WORK > DEFAULT
+DEFAULT:                    ./libraries/work/                      
+work:                       ./libraries/work/                      
+rst_controller:             ./libraries/rst_controller/            
+up_clocks_0:                ./libraries/up_clocks_0/               
+clocksystem_inst_reset_bfm: ./libraries/clocksystem_inst_reset_bfm/
+clocksystem_inst_clk_bfm:   ./libraries/clocksystem_inst_clk_bfm/  
+clocksystem_inst:           ./libraries/clocksystem_inst/          
+altera_ver:                 ./libraries/altera_ver/                
+lpm_ver:                    ./libraries/lpm_ver/                   
+sgate_ver:                  ./libraries/sgate_ver/                 
+altera_mf_ver:              ./libraries/altera_mf_ver/             
+altera_lnsim_ver:           ./libraries/altera_lnsim_ver/          
+cycloneii_ver:              ./libraries/cycloneii_ver/             

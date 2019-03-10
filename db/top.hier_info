@@ -1,0 +1,286 @@
+|top
+KEY[0] => KEY[0].IN3
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => ~NO_FANOUT~
+CLOCK_50 => CLOCK_50.IN4
+VGA_HS <= vga640x480:display.o_hs
+VGA_VS <= vga640x480:display.o_vs
+VGA_R[0] <= <GND>
+VGA_R[1] <= <GND>
+VGA_R[2] <= <GND>
+VGA_R[3] <= <GND>
+VGA_G[0] <= <GND>
+VGA_G[1] <= <GND>
+VGA_G[2] <= <GND>
+VGA_G[3] <= <GND>
+VGA_B[0] <= VGA_B.DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[1] <= VGA_B.DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[2] <= VGA_B.DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[3] <= VGA_B.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[0] <= seven_segment_display:left_score_display.display
+HEX0[1] <= seven_segment_display:left_score_display.display
+HEX0[2] <= seven_segment_display:left_score_display.display
+HEX0[3] <= seven_segment_display:left_score_display.display
+HEX0[4] <= seven_segment_display:left_score_display.display
+HEX0[5] <= seven_segment_display:left_score_display.display
+HEX0[6] <= seven_segment_display:left_score_display.display
+HEX1[0] <= seven_segment_display:right_score_display.display
+HEX1[1] <= seven_segment_display:right_score_display.display
+HEX1[2] <= seven_segment_display:right_score_display.display
+HEX1[3] <= seven_segment_display:right_score_display.display
+HEX1[4] <= seven_segment_display:right_score_display.display
+HEX1[5] <= seven_segment_display:right_score_display.display
+HEX1[6] <= seven_segment_display:right_score_display.display
+PS2_CLK <> ps2:keyboard.PS2_CLK
+PS2_DAT <> ps2:keyboard.PS2_DAT
+
+
+|top|ps2:keyboard
+rst_n => scancode.OUTPUTSELECT
+rst_n => scancode.OUTPUTSELECT
+rst_n => scancode.OUTPUTSELECT
+rst_n => scancode.OUTPUTSELECT
+rst_n => scancode.OUTPUTSELECT
+rst_n => scancode.OUTPUTSELECT
+rst_n => scancode.OUTPUTSELECT
+rst_n => scancode.OUTPUTSELECT
+rst_n => current_bit.OUTPUTSELECT
+rst_n => current_bit.OUTPUTSELECT
+rst_n => current_bit.OUTPUTSELECT
+rst_n => current_bit.OUTPUTSELECT
+scancode[0] <= scancode[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scancode[1] <= scancode[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scancode[2] <= scancode[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scancode[3] <= scancode[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scancode[4] <= scancode[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scancode[5] <= scancode[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scancode[6] <= scancode[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scancode[7] <= scancode[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|clocksystem:clocks
+clk_clk => clk_clk.IN2
+reset_reset_n => _.IN1
+vga_clk_clk <= clocksystem_up_clocks_0:up_clocks_0.VGA_CLK
+
+
+|top|clocksystem:clocks|clocksystem_up_clocks_0:up_clocks_0
+CLOCK_50 => CLOCK_50.IN1
+reset => ~NO_FANOUT~
+VGA_CLK <= altpll:DE_Clock_Generator_System.clk
+sys_clk <= altpll:DE_Clock_Generator_System.clk
+sys_reset_n <= altpll:DE_Clock_Generator_System.locked
+
+
+|top|clocksystem:clocks|clocksystem_up_clocks_0:up_clocks_0|altpll:DE_Clock_Generator_System
+inclk[0] => pll.CLK
+inclk[1] => ~NO_FANOUT~
+fbin => ~NO_FANOUT~
+pllena => ~NO_FANOUT~
+clkswitch => ~NO_FANOUT~
+areset => ~NO_FANOUT~
+pfdena => ~NO_FANOUT~
+clkena[0] => ~NO_FANOUT~
+clkena[1] => ~NO_FANOUT~
+clkena[2] => ~NO_FANOUT~
+clkena[3] => ~NO_FANOUT~
+clkena[4] => ~NO_FANOUT~
+clkena[5] => ~NO_FANOUT~
+extclkena[0] => ~NO_FANOUT~
+extclkena[1] => ~NO_FANOUT~
+extclkena[2] => ~NO_FANOUT~
+extclkena[3] => ~NO_FANOUT~
+scanclk => ~NO_FANOUT~
+scanclkena => ~NO_FANOUT~
+scanaclr => ~NO_FANOUT~
+scanread => ~NO_FANOUT~
+scanwrite => ~NO_FANOUT~
+scandata => ~NO_FANOUT~
+phasecounterselect[0] => ~NO_FANOUT~
+phasecounterselect[1] => ~NO_FANOUT~
+phasecounterselect[2] => ~NO_FANOUT~
+phasecounterselect[3] => ~NO_FANOUT~
+phaseupdown => ~NO_FANOUT~
+phasestep => ~NO_FANOUT~
+configupdate => ~NO_FANOUT~
+fbmimicbidir <> <GND>
+clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
+clk[1] <= clk[1].DB_MAX_OUTPUT_PORT_TYPE
+clk[2] <= clk[2].DB_MAX_OUTPUT_PORT_TYPE
+clk[3] <= <GND>
+clk[4] <= <GND>
+clk[5] <= <GND>
+extclk[0] <= <GND>
+extclk[1] <= <GND>
+extclk[2] <= <GND>
+extclk[3] <= <GND>
+clkbad[0] <= <GND>
+clkbad[1] <= <GND>
+enable1 <= <GND>
+enable0 <= <GND>
+activeclock <= <GND>
+clkloss <= <GND>
+locked <= pll.LOCKED
+scandataout <= <GND>
+scandone <= <GND>
+sclkout0 <= <GND>
+sclkout1 <= sclkout1.DB_MAX_OUTPUT_PORT_TYPE
+phasedone <= <GND>
+vcooverrange <= <GND>
+vcounderrange <= <GND>
+fbout <= <GND>
+fref <= <GND>
+icdrclk <= <GND>
+
+
+|top|clocksystem:clocks|altera_reset_controller:rst_controller
+reset_in0 => merged_reset.IN0
+reset_in1 => merged_reset.IN1
+reset_in2 => merged_reset.IN1
+reset_in3 => merged_reset.IN1
+reset_in4 => merged_reset.IN1
+reset_in5 => merged_reset.IN1
+reset_in6 => merged_reset.IN1
+reset_in7 => merged_reset.IN1
+reset_in8 => merged_reset.IN1
+reset_in9 => merged_reset.IN1
+reset_in10 => merged_reset.IN1
+reset_in11 => merged_reset.IN1
+reset_in12 => merged_reset.IN1
+reset_in13 => merged_reset.IN1
+reset_in14 => merged_reset.IN1
+reset_in15 => merged_reset.IN1
+clk => clk.IN1
+reset_out <= altera_reset_synchronizer:alt_rst_sync_uq1.reset_out
+reset_req <= <GND>
+
+
+|top|clocksystem:clocks|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+reset_in => altera_reset_synchronizer_int_chain_out.PRESET
+reset_in => altera_reset_synchronizer_int_chain[0].PRESET
+reset_in => altera_reset_synchronizer_int_chain[1].PRESET
+clk => altera_reset_synchronizer_int_chain_out.CLK
+clk => altera_reset_synchronizer_int_chain[0].CLK
+clk => altera_reset_synchronizer_int_chain[1].CLK
+reset_out <= altera_reset_synchronizer_int_chain_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|vga640x480:display
+i_clk => v_count[0].CLK
+i_clk => v_count[1].CLK
+i_clk => v_count[2].CLK
+i_clk => v_count[3].CLK
+i_clk => v_count[4].CLK
+i_clk => v_count[5].CLK
+i_clk => v_count[6].CLK
+i_clk => v_count[7].CLK
+i_clk => v_count[8].CLK
+i_clk => v_count[9].CLK
+i_clk => h_count[0].CLK
+i_clk => h_count[1].CLK
+i_clk => h_count[2].CLK
+i_clk => h_count[3].CLK
+i_clk => h_count[4].CLK
+i_clk => h_count[5].CLK
+i_clk => h_count[6].CLK
+i_clk => h_count[7].CLK
+i_clk => h_count[8].CLK
+i_clk => h_count[9].CLK
+i_pix_stb => h_count.OUTPUTSELECT
+i_pix_stb => h_count.OUTPUTSELECT
+i_pix_stb => h_count.OUTPUTSELECT
+i_pix_stb => h_count.OUTPUTSELECT
+i_pix_stb => h_count.OUTPUTSELECT
+i_pix_stb => h_count.OUTPUTSELECT
+i_pix_stb => h_count.OUTPUTSELECT
+i_pix_stb => h_count.OUTPUTSELECT
+i_pix_stb => h_count.OUTPUTSELECT
+i_pix_stb => h_count.OUTPUTSELECT
+i_pix_stb => v_count.OUTPUTSELECT
+i_pix_stb => v_count.OUTPUTSELECT
+i_pix_stb => v_count.OUTPUTSELECT
+i_pix_stb => v_count.OUTPUTSELECT
+i_pix_stb => v_count.OUTPUTSELECT
+i_pix_stb => v_count.OUTPUTSELECT
+i_pix_stb => v_count.OUTPUTSELECT
+i_pix_stb => v_count.OUTPUTSELECT
+i_pix_stb => v_count.OUTPUTSELECT
+i_pix_stb => v_count.OUTPUTSELECT
+i_rst => h_count.OUTPUTSELECT
+i_rst => h_count.OUTPUTSELECT
+i_rst => h_count.OUTPUTSELECT
+i_rst => h_count.OUTPUTSELECT
+i_rst => h_count.OUTPUTSELECT
+i_rst => h_count.OUTPUTSELECT
+i_rst => h_count.OUTPUTSELECT
+i_rst => h_count.OUTPUTSELECT
+i_rst => h_count.OUTPUTSELECT
+i_rst => h_count.OUTPUTSELECT
+i_rst => v_count.OUTPUTSELECT
+i_rst => v_count.OUTPUTSELECT
+i_rst => v_count.OUTPUTSELECT
+i_rst => v_count.OUTPUTSELECT
+i_rst => v_count.OUTPUTSELECT
+i_rst => v_count.OUTPUTSELECT
+i_rst => v_count.OUTPUTSELECT
+i_rst => v_count.OUTPUTSELECT
+i_rst => v_count.OUTPUTSELECT
+i_rst => v_count.OUTPUTSELECT
+o_hs <= o_hs.DB_MAX_OUTPUT_PORT_TYPE
+o_vs <= o_vs.DB_MAX_OUTPUT_PORT_TYPE
+o_blanking <= o_blanking.DB_MAX_OUTPUT_PORT_TYPE
+o_active <= o_blanking.DB_MAX_OUTPUT_PORT_TYPE
+o_screenend <= o_screenend.DB_MAX_OUTPUT_PORT_TYPE
+o_animate <= o_animate.DB_MAX_OUTPUT_PORT_TYPE
+o_x[0] <= o_x.DB_MAX_OUTPUT_PORT_TYPE
+o_x[1] <= o_x.DB_MAX_OUTPUT_PORT_TYPE
+o_x[2] <= o_x.DB_MAX_OUTPUT_PORT_TYPE
+o_x[3] <= o_x.DB_MAX_OUTPUT_PORT_TYPE
+o_x[4] <= o_x.DB_MAX_OUTPUT_PORT_TYPE
+o_x[5] <= o_x.DB_MAX_OUTPUT_PORT_TYPE
+o_x[6] <= o_x.DB_MAX_OUTPUT_PORT_TYPE
+o_x[7] <= o_x.DB_MAX_OUTPUT_PORT_TYPE
+o_x[8] <= o_x.DB_MAX_OUTPUT_PORT_TYPE
+o_x[9] <= o_x.DB_MAX_OUTPUT_PORT_TYPE
+o_y[0] <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+o_y[1] <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+o_y[2] <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+o_y[3] <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+o_y[4] <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+o_y[5] <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+o_y[6] <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+o_y[7] <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+o_y[8] <= o_y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|seven_segment_display:left_score_display
+clk => ~NO_FANOUT~
+number[0] => Decoder0.IN3
+number[1] => Decoder0.IN2
+number[2] => Decoder0.IN1
+number[3] => Decoder0.IN0
+display[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|seven_segment_display:right_score_display
+clk => ~NO_FANOUT~
+number[0] => Decoder0.IN3
+number[1] => Decoder0.IN2
+number[2] => Decoder0.IN1
+number[3] => Decoder0.IN0
+display[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="clocksystem/testbench/clocksystem_tb/simulation/submodules/altera_reset_controller.v"
+   type="VERILOG"
+   library="rst_controller" />
+ <file
+   path="clocksystem/testbench/clocksystem_tb/simulation/submodules/altera_reset_synchronizer.v"
+   type="VERILOG"
+   library="rst_controller" />
+ <file
+   path="clocksystem/testbench/clocksystem_tb/simulation/submodules/altera_reset_controller.sdc"
+   type="SDC"
+   library="rst_controller" />
+ <file
+   path="clocksystem/testbench/clocksystem_tb/simulation/submodules/clocksystem_up_clocks_0.v"
+   type="VERILOG"
+   library="up_clocks_0" />
+ <file
+   path="clocksystem/testbench/clocksystem_tb/simulation/submodules/verbosity_pkg.sv"
+   type="SYSTEM_VERILOG"
+   library="clocksystem_inst_reset_bfm" />
+ <file
+   path="clocksystem/testbench/clocksystem_tb/simulation/submodules/altera_avalon_reset_source.sv"
+   type="SYSTEM_VERILOG"
+   library="clocksystem_inst_reset_bfm" />
+ <file
+   path="clocksystem/testbench/clocksystem_tb/simulation/submodules/verbosity_pkg.sv"
+   type="SYSTEM_VERILOG"
+   library="clocksystem_inst_clk_bfm" />
+ <file
+   path="clocksystem/testbench/clocksystem_tb/simulation/submodules/altera_avalon_clock_source.sv"
+   type="SYSTEM_VERILOG"
+   library="clocksystem_inst_clk_bfm" />
+ <file
+   path="clocksystem/testbench/clocksystem_tb/simulation/submodules/clocksystem.v"
+   type="VERILOG"
+   library="clocksystem_inst" />
+ <file
+   path="clocksystem/testbench/clocksystem_tb/simulation/clocksystem_tb.v"
+   type="VERILOG" />
+ <topLevel name="clocksystem_tb" />
+ <deviceFamily name="cycloneii" />
+</simPackage>

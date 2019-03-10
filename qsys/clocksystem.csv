@@ -1,0 +1,22 @@
+# system info clocksystem on 2019.03.09.20:35:50
+system_info:
+name,value
+DEVICE,EP2C20F484C7
+DEVICE_FAMILY,Cyclone II
+GENERATION_ID,1552192549
+#
+#
+# Files generated for clocksystem on 2019.03.09.20:35:50
+files:
+filepath,kind,attributes,module,is_top
+clocksystem/simulation/clocksystem.v,VERILOG,,clocksystem,true
+clocksystem/simulation/submodules/clocksystem_up_clocks_0.v,VERILOG,,clocksystem_up_clocks_0,false
+clocksystem/simulation/submodules/altera_reset_controller.v,VERILOG,,altera_reset_controller,false
+clocksystem/simulation/submodules/altera_reset_synchronizer.v,VERILOG,,altera_reset_controller,false
+clocksystem/simulation/submodules/altera_reset_controller.sdc,SDC,,altera_reset_controller,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+clocksystem.up_clocks_0,clocksystem_up_clocks_0
+clocksystem.rst_controller,altera_reset_controller

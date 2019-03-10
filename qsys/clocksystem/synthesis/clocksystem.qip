@@ -1,0 +1,18 @@
+set_global_assignment -entity "clocksystem" -library "clocksystem" -name IP_TOOL_NAME "Qsys"
+set_global_assignment -entity "clocksystem" -library "clocksystem" -name IP_TOOL_VERSION "13.0sp1"
+set_global_assignment -entity "clocksystem" -library "clocksystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -library "clocksystem" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../clocksystem.sopcinfo"]
+set_instance_assignment -entity "clocksystem" -library "clocksystem" -name SLD_INFO "QSYS_NAME clocksystem HAS_SOPCINFO 1 GENERATION_ID 1552192564"
+set_global_assignment -library "clocksystem" -name MISC_FILE [file join $::quartus(qip_path) "../../clocksystem.cmp"]
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "clocksystem" -name MISC_FILE [file join $::quartus(qip_path) "../../clocksystem.qsys"]
+
+set_global_assignment -library "clocksystem" -name VERILOG_FILE [file join $::quartus(qip_path) "clocksystem.v"]
+set_global_assignment -library "clocksystem" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.v"]
+set_global_assignment -library "clocksystem" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_synchronizer.v"]
+set_global_assignment -library "clocksystem" -name SDC_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.sdc"]
+set_global_assignment -library "clocksystem" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/clocksystem_up_clocks_0.v"]
+
+set_global_assignment -entity "altera_reset_controller" -library "clocksystem" -name IP_TOOL_NAME "altera_reset_controller"
+set_global_assignment -entity "altera_reset_controller" -library "clocksystem" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_reset_controller" -library "clocksystem" -name IP_TOOL_ENV "Qsys"

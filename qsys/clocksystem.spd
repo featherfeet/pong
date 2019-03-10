@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="clocksystem/simulation/submodules/altera_reset_controller.v"
+   type="VERILOG"
+   library="rst_controller" />
+ <file
+   path="clocksystem/simulation/submodules/altera_reset_synchronizer.v"
+   type="VERILOG"
+   library="rst_controller" />
+ <file
+   path="clocksystem/simulation/submodules/altera_reset_controller.sdc"
+   type="SDC"
+   library="rst_controller" />
+ <file
+   path="clocksystem/simulation/submodules/clocksystem_up_clocks_0.v"
+   type="VERILOG"
+   library="up_clocks_0" />
+ <file path="clocksystem/simulation/clocksystem.v" type="VERILOG" />
+ <topLevel name="clocksystem" />
+ <deviceFamily name="cycloneii" />
+</simPackage>

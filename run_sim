@@ -1,0 +1,5 @@
+#!/bin/bash
+
+scripts/icarus_compile.sh
+scripts/icarus_run.sh
+gtkwave waves.lxt gtkwave_config.gtkw
